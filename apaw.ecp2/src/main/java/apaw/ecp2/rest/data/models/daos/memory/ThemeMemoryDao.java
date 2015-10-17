@@ -1,4 +1,11 @@
 package apaw.ecp2.rest.data.models.daos.memory;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import apaw.ecp2.rest.data.models.daos.ThemeDao;
+import apaw.ecp2.rest.data.models.entities.Theme;
+
 public class ThemeMemoryDao extends GenericMemoryDao<Theme, Integer> implements ThemeDao {
 
     public ThemeMemoryDao() {

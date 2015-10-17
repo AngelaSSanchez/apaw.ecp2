@@ -1,6 +1,8 @@
 package apaw.ecp2.rest.data.models.daos.memory;
 
 import apaw.ecp2.rest.data.models.daos.DaoFactory;
+import apaw.ecp2.rest.data.models.daos.ThemeDao;
+import apaw.ecp2.rest.data.models.daos.VoteDao;
 
 public class DaoFactoryMemory extends DaoFactory {
 
