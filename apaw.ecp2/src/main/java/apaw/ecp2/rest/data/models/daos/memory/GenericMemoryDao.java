@@ -1,6 +1,9 @@
 package apaw.ecp2.rest.data.models.daos.memory;
 
 import apaw.ecp2.rest.data.models.daos.GenericDao;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 public abstract class GenericMemoryDao<T, ID> implements GenericDao<T, ID> {

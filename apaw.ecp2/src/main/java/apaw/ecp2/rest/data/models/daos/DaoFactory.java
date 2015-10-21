@@ -1,10 +1,20 @@
 package apaw.ecp2.rest.data.models.daos;
 
-public class DaoFactory {
+public abstract class DaoFactory {
 
-	public ThemeDao getThemeDao() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    public static DaoFactory factory = null;
+
+    public static void setFactory(DaoFactory factory) {
+        DaoFactory.factory = factory;
+    }
+
+    public static DaoFactory getFactory() {
+        assert factory != null;
+        return factory;
+    }
+
+    public abstract ThemeDao getThemeDao();
+
+    public abstract VoteDao getVoteDao();
 
 }
