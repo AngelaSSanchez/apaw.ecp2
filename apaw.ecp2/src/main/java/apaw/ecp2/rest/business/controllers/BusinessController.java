@@ -16,7 +16,7 @@ public class BusinessController {
 	private Theme theme;
 	
 	public void voteTheme(BusinessVoteView voteview){
-		idV++;
+		idV = DaoFactory.getFactory().getVoteDao().findAll().size();
 		theme = DaoFactory.getFactory().getThemeDao().findByName(voteview.getThemeName());
 		DaoFactory.getFactory().getVoteDao().create(new Vote(idV, voteview.getVoteValueInt(), theme));
 	}
@@ -43,7 +43,7 @@ public class BusinessController {
 	}
 
 	public void createTheme(BusinessThemeManagerView themeview){
-		idT++;
+		idT = DaoFactory.getFactory().getThemeDao().findAll().size();
 		DaoFactory.getFactory().getThemeDao().create(new Theme(idT, themeview.getThemeName()));
 	}
 	
