@@ -26,7 +26,7 @@ public class Voting {
 	}
 
 	public String process(Model model) {
-        //model.put("vote", "VotingView:process");
+        model.put("vote", "");
         return "VotingView";
 	}
 

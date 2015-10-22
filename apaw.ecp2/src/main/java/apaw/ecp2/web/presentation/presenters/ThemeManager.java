@@ -10,10 +10,9 @@ import apaw.ecp2.web.presentation.models.Model;
 public class ThemeManager {
 	
 	private String themeName;
-	private BusinessController controller;
 
 	public String process(Model model) {
-        //model.put("thememanager", "");
+        model.put("thememanager", "");
         return "ThemeManagerView";
 	}
 	
@@ -21,9 +20,7 @@ public class ThemeManager {
 		new BusinessController().createTheme(new BusinessThemeManagerView(this.themeName));
 		List<BusinessThemeManagerView> themeManager = new BusinessController().showThemeManger();
 		List<String> showThemes = new ArrayList<String>();
-        //for (int i = 0; i < themeManager.size(); i++) {
-        	//showThemes.add(themeManager.get(i).getThemeName());
-		for (BusinessThemeManagerView themes : themeManager){
+        for (BusinessThemeManagerView themes : themeManager){
 			showThemes.add(themes.getThemeName());
         }
         model.put("thememanager", showThemes);
