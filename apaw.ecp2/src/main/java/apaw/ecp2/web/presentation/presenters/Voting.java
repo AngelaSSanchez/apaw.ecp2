@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import apaw.ecp2.rest.business.controllers.BusinessController;
-import apaw.ecp2.rest.business.views.BusinessAverageView;
 import apaw.ecp2.rest.business.views.BusinessVoteView;
 import apaw.ecp2.web.presentation.models.Model;
 
@@ -16,9 +15,9 @@ public class Voting {
     public String voteTheme(Model model){
     	BusinessController bussinesscontroller = new BusinessController();
     	bussinesscontroller.voteTheme(new BusinessVoteView(themeName, value));
-		List<BusinessAverageView> votes = bussinesscontroller.showVoting();
+		List<BusinessVoteView> votes = bussinesscontroller.showVoting();
 		List<String> showVotes = new ArrayList<String>();
-        for (BusinessAverageView vote: votes) {
+        for (BusinessVoteView vote: votes) {
         	showVotes.add("[themeName=" + vote.getThemeName() + ", average=" + vote.getVoteValue() + "]");
         }
         model.put("vote", showVotes); 

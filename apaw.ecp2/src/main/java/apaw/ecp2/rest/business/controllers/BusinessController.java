@@ -3,7 +3,6 @@ package apaw.ecp2.rest.business.controllers;
 import java.util.ArrayList;
 import java.util.List;
 
-import apaw.ecp2.rest.business.views.BusinessAverageView;
 import apaw.ecp2.rest.business.views.BusinessThemeManagerView;
 import apaw.ecp2.rest.business.views.BusinessVoteView;
 import apaw.ecp2.rest.data.models.daos.DaoFactory;
@@ -21,13 +20,13 @@ public class BusinessController {
 		DaoFactory.getFactory().getVoteDao().create(new Vote(idV, voteview.getVoteValueInt(), theme));
 	}
 	
-	public List<BusinessAverageView> showVoting(){
-		List<BusinessAverageView> listVote = new ArrayList<BusinessAverageView>();
+	public List<BusinessVoteView> showVoting(){
+		List<BusinessVoteView> listVote = new ArrayList<BusinessVoteView>();
 		List<Vote> vote;		
 		List<Theme> themes = DaoFactory.getFactory().getThemeDao().findAll();
 		for (Theme theme : themes){			
 			vote = DaoFactory.getFactory().getVoteDao().findByTheme(theme);
-			listVote.add(new BusinessAverageView(theme.getName(), calculateAverage(vote))); 			
+			listVote.add(new BusinessVoteView(theme.getName(), calculateAverage(vote))); 			
 		}
 		return listVote;
 	}
